@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>全国天気</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script type="module" src="./main.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-sky-200 font-['M_PLUS1'] tracking-wider">
+  <div id="stage" class="relative -mt-[200px] mx-auto flex items-center justify-center w-[2000px] h-[2000px]">
+  <div id="temp-Asahikawa-1" class="bg-[#C3890C]/40 absolute  top-[250px] left-[1400px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Asahikawa-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex  items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium px-2">旭川</h1>
+        <img id="icon-Asahikawa" alt="天気マーク" class="m-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-[#C3890C]/90 mt-4 py-2 px-4 rounded-xl text-xl text-white font-medium">
+      <img id="ondo-Asahikawa" alt="温度" class="h-[40px]">
+      <p id="message-Asahikawa-1" class="ml-2"></p>
+      <img id="situdo-Asahikawa" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Asahikawa-2" class="ml-2"></p>
+      <p id="error-Asahikawa"></p>
+    </div>
+  </div>
+  <div id="temp-Sapporo-1" class="bg-[#C3890C]/40 absolute  top-[330px] left-[1000px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Sapporo-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex  items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium px-2">札幌</h1>
+        <img id="icon-Sapporo" alt="天気マーク" class="m-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-[#C3890C]/90 mt-4 py-2 px-4 rounded-xl text-xl text-white font-medium">
+      <img id="ondo-Sapporo" alt="温度" class="h-[40px]">
+      <p id="message-Sapporo-1" class="ml-2"></p>
+      <img id="situdo-Sapporo" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Sapporo-2" class="ml-2"></p>
+      <p id="error-Sapporo"></p>
+    </div>
+  </div>
+  <div id="temp-Aomori-1" class="bg-sky-600/40 absolute  top-[550px] left-[1350px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Aomori-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex  items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium px-2">青森</h1>
+        <img id="icon-Aomori" alt="天気マーク" class="m-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-sky-600/90 mt-4 py-2 px-4 rounded-xl text-xl text-white font-medium">
+      <img id="ondo-Aomori" alt="温度" class="h-[40px]">
+      <p id="message-Aomori-1" class="ml-2"></p>
+      <img id="situdo-Aomori" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Aomori-2" class="ml-2"></p>
+      <p id="error-Aomori"></p>
+    </div>
+  </div>
+  <div id="temp-Sendai-1" class="bg-sky-600/40 absolute  top-[850px] left-[1400px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Sendai-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex  items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium px-2">仙台</h1>
+        <img id="icon-Sendai" alt="天気マーク" class="m-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-sky-600/90 mt-4 py-2 px-4 rounded-xl text-xl text-white font-medium">
+      <img id="ondo-Sendai" alt="温度" class="h-[40px]">
+      <p id="message-Sendai-1" class="ml-2"></p>
+      <img id="situdo-Sendai" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Sendai-2" class="ml-2"></p>
+      <p id="error-Sendai"></p>
+    </div>
+  </div>
+  <div id="temp-Tokyo-1" class="bg-red-500/40 absolute  top-[1150px] left-[1350px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Tokyo-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex  items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium px-2">東京</h1>
+        <img id="icon-Tokyo" alt="天気マーク" class="m-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-red-500/70 mt-4 py-2 px-4 rounded-xl text-white text-xl font-medium">
+      <img id="ondo-Tokyo" alt="温度" class="h-[40px]">
+      <p id="message-Tokyo-1" class="ml-2"></p>
+      <img id="situdo-Tokyo" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Tokyo-2" class="ml-2"></p>
+      <p id="error-Tokyo"></p>
+    </div>
+  </div>
+  <div id="temp-Niigata-1" class="bg-lime-600/40 absolute  top-[680px] left-[900px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Niigata-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex  items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium px-2">新潟</h1>
+        <img id="icon-Niigata" alt="天気マーク" class="m-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-lime-600/90 mt-4 py-2 px-4 rounded-xl text-xl text-white font-medium">
+      <img id="ondo-Niigata" alt="温度" class="h-[40px]">
+      <p id="message-Niigata-1" class="ml-2"></p>
+      <img id="situdo-Niigata" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Niigata-2" class="ml-2"></p>
+      <p id="error-Niigata"></p>
+    </div>
+  </div>
+  <div id="temp-Nagoya-1" class="bg-lime-600/40 absolute  top-[1300px] left-[970px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Nagoya-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex justify-center items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium">名古屋</h1>
+        <img id="icon-Nagoya" alt="天気マーク" class="my-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-lime-600/90 mt-4 py-2 px-4 rounded-xl text-xl text-white font-medium">
+      <img id="ondo-Nagoya" alt="温度" class="h-[40px]">
+      <p id="message-Nagoya-1" class="ml-2"></p>
+      <img id="situdo-Nagoya" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Nagoya-2" class="ml-2"></p>
+      <p id="error-Nagoya"></p>
+    </div>
+  </div>
+  <div id="temp-Osaka-1" class="bg-yellow-500/40 absolute  top-[1000px] left-[850px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Osaka-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex  items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium px-2">大阪</h1>
+        <img id="icon-Osaka" alt="天気マーク" class="m-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-yellow-500/90 mt-4 py-2 px-4 rounded-xl text-xl text-white font-medium">
+      <img id="ondo-Osaka" alt="温度" class="h-[40px]">
+      <p id="message-Osaka-1" class="ml-2"></p>
+      <img id="situdo-Osaka" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Osaka-2" class="ml-2"></p>
+      <p id="error-Osaka"></p>
+    </div>
+  </div>
+  <div id="temp-Hirosima-1" class="bg-purple-500/40 absolute  top-[950px] left-[480px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Hirosima-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex  items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium px-2">広島</h1>
+        <img id="icon-Hirosima" alt="天気マーク" class="m-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-purple-500/90 mt-4 py-2 px-4 rounded-xl text-xl text-white font-medium">
+      <img id="ondo-Hirosima" alt="温度" class="h-[40px]">
+      <p id="message-Hirosima-1" class="ml-2"></p>
+      <img id="situdo-Hirosima" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Hirosima-2" class="ml-2"></p>
+      <p id="error-Hirosima"></p>
+    </div>
+  </div>
+  <div id="temp-Kochi-1" class="bg-orange-600/40 absolute  top-[1400px] left-[600px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Kochi-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex  items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium px-2">高知</h1>
+        <img id="icon-Kochi" alt="天気マーク" class="m-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-orange-600/90 mt-4 py-2 px-4 rounded-xl text-xl text-white font-medium">
+      <img id="ondo-Kochi" alt="温度" class="h-[40px]">
+      <p id="message-Kochi-1" class="ml-2"></p>
+      <img id="situdo-Kochi" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Kochi-2" class="ml-2"></p>
+      <p id="error-Kochi"></p>
+    </div>
+  </div>
+  <div id="temp-Fukuoka-1" class="bg-indigo-500/40 absolute  top-[1080px] left-[110px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Fukuoka-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex  items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium px-2">福岡</h1>
+        <img id="icon-Fukuoka" alt="天気マーク" class="m-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-indigo-500/90 mt-4 py-2 px-4 rounded-xl text-xl text-white font-medium">
+      <img id="ondo-Fukuoka" alt="温度" class="h-[40px]">
+      <p id="message-Fukuoka-1" class="ml-2"></p>
+      <img id="situdo-Fukuoka" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Fukuoka-2" class="ml-2"></p>
+      <p id="error-Fukuoka"></p>
+    </div>
+  </div>
+  <div id="temp-Kagoshima-1" class="bg-indigo-500/40 absolute  top-[1380px] left-[170px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Kagoshima-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex justify-center items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium">鹿児島</h1>
+        <img id="icon-Kagoshima" alt="天気マーク" class="my-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-indigo-500/90 mt-4 py-2 px-4 rounded-xl text-xl text-white font-medium">
+      <img id="ondo-Kagoshima" alt="温度" class="h-[40px]">
+      <p id="message-Kagoshima-1" class="ml-2"></p>
+      <img id="situdo-Kagoshima" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Kagoshima-2" class="ml-2"></p>
+      <p id="error-Kagoshima"></p>
+    </div>
+  </div>
+  <div id="temp-Naha-1" class="bg-rose-400/40 absolute  top-[1700px] left-[300px] w-[320px] px-7 py-4 rounded-xl shadow-lg">
+    <div id="temp-Naha-2" class="flex justify-center items-center rounded-xl shadow-lg">
+      <div class="bg-white/80 flex  items-center px-3 my-4  rounded-xl">
+        <h1 class="text-4xl text-gray-800 font-medium px-2">那覇</h1>
+        <img id="icon-Naha" alt="天気マーク" class="m-2 h-[100px]">
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center bg-rose-400/90 mt-4 py-2 px-4 rounded-xl text-xl text-white font-medium">
+      <img id="ondo-Naha" alt="温度" class="h-[40px]">
+      <p id="message-Naha-1" class="ml-2"></p>
+      <img id="situdo-Naha" alt="湿度" class="h-[40px] ml-8">
+      <p id="message-Naha-2" class="ml-2"></p>
+      <p id="error-Naha"></p>
+    </div>
+  </div>
+  <img src="./chizu.png" alt="日本地図" class="w-[1500px] sh-[1500px]">
+  </div>
+  <script>
+    // 2000px固定のキャンバスを画面幅に合わせて縮小する
+    const stage = document.getElementById('stage');
+    const fit = () => { stage.style.zoom = Math.min(1, document.documentElement.clientWidth / 2000); };
+    fit();
+    window.addEventListener('resize', fit);
+  </script>
+</body>
+
+</html>

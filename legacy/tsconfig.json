@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    // コンパイル後のJavaScriptバージョンをES2020に設定
+    "target": "ES2020",
+    // 出力されるモジュール形式をES Modulesに指定
+    "module": "ES2020",
+    // Viteなどのモダンなビルドツール向けにモジュール解決を行う
+    "moduleResolution": "Bundler",
+    // CommonJSモジュールの読み込み互換性を有効化
+    "esModuleInterop": true,
+    // 型チェックを最大限厳格にする（バグ防止のため推奨）
+    "strict": true,
+    // インポートパスに拡張子を自動付与（Node.js/ESM環境向け）
+    "rewriteRelativeImportExtensions": true
+  }
+}
